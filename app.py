@@ -2,6 +2,7 @@
 Description of python file
 """
 
-import sys
-
-print(sys.path)
+a = 10
+b = 30
+sum = a + b
+print(sum)
