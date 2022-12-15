@@ -15,10 +15,11 @@ def main_menu():
     while True:
         option = (input('\nChoose an option:\n'))
         if option == '3':
-            print('Exiting the program. Have a nice day!')
+            print('Exiting the program... Have a nice day!')
             break
         elif option == '1':
             budget_projection()
+            main_menu()
         elif option == '2':
             pass
         else:
