@@ -65,7 +65,6 @@ def budget_projection():
             "{:.2f}".format(yearly_budget_amount),
             "left over in a year.\n",
         )
-        os.system("pause")
     else:
         print(
             "You will be $", "{:.2f}".format(monthly_budget_amount), "short in a month."
@@ -76,4 +75,4 @@ def budget_projection():
             "short in a year.",
         )
         print("\nPlease consider increasing your income or decreasing your expenses.\n")
-        os.system("pause")
+    os.system("pause")
