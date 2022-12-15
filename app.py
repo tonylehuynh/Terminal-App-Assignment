@@ -14,12 +14,12 @@ def main_menu():
     print('3. Exit')
     while True:
         option = (input('\nChoose an option:\n'))
-        if option == "3":
+        if option == '3':
             print('Exiting the program. Have a nice day!')
             break
-        elif option == "1":
+        elif option == '1':
             budget_projection()
-        elif option == "2":
+        elif option == '2':
             pass
         else:
             print('INVALID INPUT... Please enter 1, 2 or 3:')
