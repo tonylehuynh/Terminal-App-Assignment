@@ -1,10 +1,12 @@
+"""This is the feature for Option 1 'Budget Projection' of the application."""
+
 import os
 
 
 def projected_expenses():
     while True:
         try:
-            housing = float(input("Rent/mortgage expense: $"))
+            housing = float(input("Rent and/or mortgage expense: $"))
             utilities = float(input("Utilities total expense: $"))
             food = float(input("Groceries & food expense: $"))
             transport = float(input("Transport expense: $"))
@@ -34,6 +36,10 @@ def projected_income():
     return total_income
 
 
+def monthly_budget_calculation(income, expense):
+    return income - expense
+
+
 def budget_projection():
     os.system("cls")
     print("We will now project your budget for the next month & year!\n")
@@ -42,10 +48,11 @@ def budget_projection():
     income_total = projected_income()
     os.system("cls")
     print("Great! Now please enter your projected monthly expenses:\n")
+    print("(Enter '0' for any expense that isn't applicable)")
     expense_total = projected_expenses()
     os.system("cls")
     print("After projecting your total income minus total expenses:\n")
-    monthly_budget_amount = income_total - expense_total
+    monthly_budget_amount = monthly_budget_calculation(income_total, expense_total)
     yearly_budget_amount = monthly_budget_amount * 12
     if monthly_budget_amount > 0:
         print(
