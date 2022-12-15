@@ -1,5 +1,5 @@
 """
-Description of python file
+Run Budget Terminal Application from this app.py file
 """
 
 import os
