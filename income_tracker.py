@@ -13,16 +13,26 @@ def income_category():
 def input_date():
     while True:
         try:
-            date_string = input("Enter a date (YYYY-MM-DD): ")
+            date_string = input("Enter the date this transaction took place (YYYY-MM-DD): ")
             date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d")
             break
         except ValueError:
-            print("Invalid date format... Please enter a date in the format YYYY-MM-DD.")
+            print("\nInvalid input...")
+            print("Invalid date format... Please enter a date in the format YYYY-MM-DD.\n")
     return date_input
 
 
 def input_amount():
-    pass
+    while True:
+        try:
+            amount_input = float(
+                input("Enter the amount: $")
+            )
+            break
+        except ValueError:
+            print("\nInvalid input...")
+            print("Please try again and ensure you only enter number values\n")
+    return amount_input
 
 
 def file_does_not_exist():
