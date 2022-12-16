@@ -9,6 +9,7 @@ from display_last_rows import display_last_rows
 
 
 def check_for_file():
+    os.system("cls")
     if not os.path.exists("data.csv"):
         file_does_not_exist()
 

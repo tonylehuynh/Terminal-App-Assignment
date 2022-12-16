@@ -68,5 +68,3 @@ def store_expense_data():
         amount = input_amount()
 
         writer.writerow([date, category, amount])
-
-
