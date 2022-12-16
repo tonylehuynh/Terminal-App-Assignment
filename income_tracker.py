@@ -14,7 +14,7 @@ def input_date():
     while True:
         try:
             date_string = input("Enter the date this transaction took place (YYYY-MM-DD): ")
-            date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d")
+            date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d").date()
             break
         except ValueError:
             print("\nInvalid input...")
@@ -46,14 +46,15 @@ def store_budget_data():
         writer = csv.writer(csvfile, delimiter=",")
 
         category = income_category()
-        test_date = datetime.datetime(2022, 6, 6)
-        date = test_date
-        amount = 100.20
+        date = input_date()
+        amount = input_amount()
 
         writer.writerow([date, category, amount])
 
 
 def income_tracker():
+    os.system("cls")
+    print("Please enter your income received:\n")
     if not os.path.exists("data.csv"):
         file_does_not_exist()
     if os.path.exists("data.csv"):

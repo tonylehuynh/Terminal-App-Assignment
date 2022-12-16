@@ -14,7 +14,7 @@ def main_menu():
     print("Please enter 1, 2 or 3 for the following options:\n")
     print("1. Estimate Budget projection")
     print("2. Track your budget")
-    print("3. Exit")
+    print("3. Exit application")
     while True:
         option = input("\nChoose an option:\n")
         if option == "3":
