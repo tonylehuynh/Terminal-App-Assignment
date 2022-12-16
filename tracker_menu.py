@@ -1,8 +1,8 @@
 """This is the menu displayed for Option 2 'Track Budget' of this Terminal Application"""
 
 import os
-from income_tracker import income_tracker
-from expense_tracker import expense_tracker
+from income_tracker import store_income_data, check_for_file
+from expense_tracker import store_expense_data
 
 
 def tracker_menu():
@@ -22,16 +22,18 @@ def tracker_menu():
             print("Exiting the program... Have a nice day!")
             quit()
         elif option == "1":
-            income_tracker()
+            check_for_file()
+            store_income_data()
             print("Income entry has been saved.")
             os.system("pause")
             tracker_menu()
         elif option == "2":
-            expense_tracker()
+            check_for_file()
+            store_expense_data()
             print("Expense entry has been saved.")
             os.system("pause")
             tracker_menu()
         elif option == "3":
-            break
+            check_for_file()
         else:
             print("INVALID INPUT... Please enter 1, 2, 3, 4 or 5:")

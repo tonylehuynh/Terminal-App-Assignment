@@ -57,6 +57,8 @@ def expense_category():
 
 
 def store_expense_data():
+    os.system("cls")
+    print("Please enter your expenses\n")
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
 
@@ -67,12 +69,4 @@ def store_expense_data():
 
         writer.writerow([date, category, amount])
 
-
-def expense_tracker():
-    os.system("cls")
-    print("Please enter your expenses\n")
-    if not os.path.exists("data.csv"):
-        file_does_not_exist()
-    if os.path.exists("data.csv"):
-        store_expense_data()
 
