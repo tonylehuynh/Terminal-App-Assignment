@@ -15,6 +15,5 @@ def test_piechart_will_not_open():
     # Returns none as csv file has insufficient rows
     assert result is None
 
-# Test Case 2 - Create piechart function will be called as data.csv has sufficient data
 
 

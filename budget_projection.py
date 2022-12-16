@@ -22,16 +22,6 @@ def projected_expenses():
                     raise ValueError("Error: Only enter a positive value.")
                 else:
                     expense_variables.append(expense_value)
-            # housing = float(input("Rent and/or mortgage expense: $"))
-            # utilities = float(input("Utilities total expense: $"))
-            # food = float(input("Groceries & food expense: $"))
-            # transport = float(input("Transport expense: $"))
-            # insurance = float(input("Insurance payments: $"))
-            # debt = float(input("Any debt repayments: $"))
-            # misc = float(input("Any additional miscellaneous expenses: $"))
-            # total_expenses = (
-            #     housing + utilities + food + transport + insurance + debt + misc
-            # )
             total_expenses = sum(expense_variables)
             break
         except ValueError:
