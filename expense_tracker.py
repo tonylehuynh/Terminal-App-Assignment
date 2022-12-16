@@ -36,12 +36,19 @@ def expense_category():
     print("11. Exercise")
     print("12. Socialising")
     print("13. Miscellaneous")
-    user_input = int(
-        input("\nEnter a number to choose your option (e.g. Type 1 for Rent):\n")
-    )
-    expense_type = category.get(user_input)
+    while True:
+        try:
+            user_input = int(
+                input(
+                    "\nEnter a number to choose your option (e.g. Type 1 for Rent):\n"
+                )
+            )
+            expense_type = category.get(user_input)
+            break
+        except ValueError:
+            print("\nInvalid input...")
+            print("Please try again and ensure you only enter number values\n")
     return expense_type
-
 
 
 def store_expense_data():
