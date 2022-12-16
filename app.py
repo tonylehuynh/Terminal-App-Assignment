@@ -4,7 +4,7 @@ Run Budget Terminal Application from this app.py file
 
 import os
 from budget_projection import budget_projection
-from budget_tracker import tracker_menu
+from tracker_menu import tracker_menu
 
 
 # App main menu
