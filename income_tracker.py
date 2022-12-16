@@ -16,8 +16,7 @@ def input_date():
             date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d").date()
             break
         except ValueError:
-            print("\nInvalid input...")
-            print("Invalid date format... Please enter a date in the format YYYY-MM-DD.\n")
+            print("\nInvalid date format... Please enter a date in the format YYYY-MM-DD.\n")
     return date_input
 
 

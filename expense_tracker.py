@@ -43,6 +43,10 @@ def expense_category():
                     "\nEnter a number to choose your option (e.g. Type 1 for Rent):\n"
                 )
             )
+            if not (0 < user_input < 14):
+                print("\nInvalid input...")
+                print("Please only enter in number between 1 and 13...")
+                continue
             expense_type = category.get(user_input)
             break
         except ValueError:
@@ -54,8 +58,9 @@ def expense_category():
 def store_expense_data():
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
-
+        
         category = expense_category()
+        print(f"Category: {category}")
         date = input_date()
         amount = input_amount()
 
@@ -64,8 +69,10 @@ def store_expense_data():
 
 def expense_tracker():
     os.system("cls")
-    print("Please enter your expenses:\n")
+    print("Please enter your expenses\n")
     if not os.path.exists("data.csv"):
         file_does_not_exist()
     if os.path.exists("data.csv"):
         store_expense_data()
+
+expense_tracker()
