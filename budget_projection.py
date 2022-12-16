@@ -6,13 +6,20 @@ import os
 def projected_expenses():
     while True:
         try:
-            expense_types = ["rent", "mortgage", "food", "transport", "insurance", "debt", "misc"]
+            expense_types = [
+                "rent",
+                "mortgage",
+                "food",
+                "transport",
+                "insurance",
+                "debt",
+                "misc",
+            ]
             expense_variables = []
             for expense in expense_types:
-                expense_value = float(input(f"{expense.capitalize()} expense: $"))
+                expense_value = float(input(f"{expense.capitalize()}: $"))
                 if expense_value < 0:
-                    print("Invalid input... Only enter positive values.")
-                    continue
+                    raise ValueError("Error: Only enter a positive value.")
                 else:
                     expense_variables.append(expense_value)
             # housing = float(input("Rent and/or mortgage expense: $"))
@@ -29,7 +36,7 @@ def projected_expenses():
             break
         except ValueError:
             print("\nInvalid input...")
-            print("Please try again and ensure you only enter number values\n")
+            print("Please try again and ensure you only enter positive number values\n")
     return total_expenses
 
 

@@ -6,14 +6,15 @@ import csv
 import datetime
 
 
-
-
-
 def input_date():
     while True:
         try:
             date_string = input("Enter the date this transaction took place (YYYY-MM-DD): ")
             date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d").date()
+            today = datetime.datetime.now().date()
+            if date_input > today:
+                print("Unable to enter dates in the future...")
+                continue
             break
         except ValueError:
             print("\nInvalid date format... Please enter a date in the format YYYY-MM-DD.\n")
@@ -27,11 +28,11 @@ def input_amount():
                 input("Enter the amount: $")
             )
             if amount_input < 0:
-                continue
+                raise ValueError 
             break
         except ValueError:
             print("\nInvalid input...")
-            print("Please try again and ensure you only enter number values\n")
+            print("Please try again and ensure you only enter positive number values\n")
     return amount_input
 
 

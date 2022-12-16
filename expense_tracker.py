@@ -76,5 +76,3 @@ def expense_tracker():
     if os.path.exists("data.csv"):
         store_expense_data()
 
-
-expense_tracker()

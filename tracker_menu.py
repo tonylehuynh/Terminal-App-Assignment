@@ -2,6 +2,7 @@
 
 import os
 from income_tracker import income_tracker
+from expense_tracker import expense_tracker
 
 
 def tracker_menu():
@@ -22,14 +23,15 @@ def tracker_menu():
             quit()
         elif option == "1":
             income_tracker()
-            print("Income has been saved.")
+            print("Income entry has been saved.")
             os.system("pause")
             tracker_menu()
         elif option == "2":
-            break
+            expense_tracker()
+            print("Expense entry has been saved.")
+            os.system("pause")
+            tracker_menu()
         elif option == "3":
             break
         else:
             print("INVALID INPUT... Please enter 1, 2, 3, 4 or 5:")
-
-
