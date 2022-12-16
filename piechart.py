@@ -2,12 +2,33 @@
 
 import os
 import csv
-import matplotlib as ply
-import pandas
+import matplotlib.pyplot as plt
 
 
 def create_piechart():
-    print("Successful")
+    category_counts = {}
+    with open("data.csv", "r") as csvfile:
+        reader = csv.reader(csvfile)
+
+        # Get the category values from second column of csv file. Skip first row.
+        next(reader)
+        for row in reader:
+            category = row[1]
+        if category in category_counts:
+            category_counts[category] += 1
+        else:
+            category_counts[category] = 1
+
+    # Label and sizes for piechart
+    labels = list(category_counts.keys())
+    sizes = list(category_counts.values())
+
+    # Create pie chart
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, autopct="%1.1f%%")
+    ax.axis("equal")
+    ax.set_title("Income and Expenses distribution")
+    plt.show()
 
 
 def piechart_read():
@@ -24,4 +45,4 @@ def piechart_read():
         else:
             create_piechart()
 
-
+piechart_read()
