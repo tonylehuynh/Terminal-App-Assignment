@@ -2,7 +2,7 @@
 
 import os
 import csv
-from income_tracker import input_date, input_amount, file_does_not_exist
+from income_tracker import input_date, input_amount
 
 
 def expense_category():

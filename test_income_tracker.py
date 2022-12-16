@@ -3,7 +3,8 @@
 import os
 import csv
 import datetime
-from income_tracker import file_does_not_exist, store_budget_data
+from income_tracker import store_income_data
+from tracker_menu import file_does_not_exist
 
 
 # Test that function will successfully create csv file
@@ -25,7 +26,7 @@ def test_file_format():
 # Test that function will correctly append data to csv file
 # Case 1 - Function only appends string values into csv file
 def test_append_csv_string():
-    store_budget_data()
+    store_income_data()
     with open("data.csv", "r") as csv_file:
         reader = csv.reader(csv_file)
         rows = list(reader)
@@ -34,7 +35,7 @@ def test_append_csv_string():
 
 # Case 2 - Function instead appends a date & float value into csv file
 def test_append_csv_float_date():
-    store_budget_data()
+    store_income_data()
     with open("data.csv", "r") as csv_file:
         reader = csv.reader(csv_file)
         rows = list(reader)

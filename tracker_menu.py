@@ -1,8 +1,21 @@
 """This is the menu displayed for Option 2 'Track Budget' of this Terminal Application"""
 
 import os
-from income_tracker import store_income_data, check_for_file
+import csv
+from income_tracker import store_income_data
 from expense_tracker import store_expense_data
+from piechart import piechart_read
+
+
+def check_for_file():
+    if not os.path.exists("data.csv"):
+        file_does_not_exist()
+
+
+def file_does_not_exist():
+    with open("data.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, delimiter=",")
+        writer.writerow(["Date", "Category", "Amount"])
 
 
 def tracker_menu():
@@ -35,5 +48,8 @@ def tracker_menu():
             tracker_menu()
         elif option == "3":
             check_for_file()
+            piechart_read()
+            os.system("pause")
+            tracker_menu()
         else:
             print("INVALID INPUT... Please enter 1, 2, 3, 4 or 5:")
