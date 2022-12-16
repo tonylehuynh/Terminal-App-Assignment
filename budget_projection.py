@@ -39,6 +39,9 @@ def projected_income():
             total_income = float(
                 input("Enter your projected monthly post-tax primary income: $")
             )
+            if total_income < 0:
+                print("Invalid input... Only enter positive values.")
+                continue
             break
         except ValueError:
             print("\nInvalid input...")
