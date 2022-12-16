@@ -6,8 +6,7 @@ import csv
 import datetime
 
 
-def income_category():
-    return "income"
+
 
 
 def input_date():
@@ -41,11 +40,11 @@ def file_does_not_exist():
         writer.writerow(["Date", "Category", "Amount"])
 
 
-def store_budget_data():
+def store_income_data():
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
 
-        category = income_category()
+        category = "income"
         date = input_date()
         amount = input_amount()
 
@@ -58,4 +57,4 @@ def income_tracker():
     if not os.path.exists("data.csv"):
         file_does_not_exist()
     if os.path.exists("data.csv"):
-        store_budget_data()
+        store_income_data()
