@@ -6,16 +6,26 @@ import os
 def projected_expenses():
     while True:
         try:
-            housing = float(input("Rent and/or mortgage expense: $"))
-            utilities = float(input("Utilities total expense: $"))
-            food = float(input("Groceries & food expense: $"))
-            transport = float(input("Transport expense: $"))
-            insurance = float(input("Insurance payments: $"))
-            debt = float(input("Any debt repayments: $"))
-            misc = float(input("Any additional miscellaneous expenses: $"))
-            total_expenses = (
-                housing + utilities + food + transport + insurance + debt + misc
-            )
+            expense_types = ["rent", "mortgage", "food", "transport", "insurance", "debt", "misc"]
+            expense_variables = []
+            for expense in expense_types:
+                expense_value = float(input(f"{expense.capitalize()} expense: $"))
+                if expense_value < 0:
+                    print("Invalid input... Only enter positive values.")
+                    continue
+                else:
+                    expense_variables.append(expense_value)
+            # housing = float(input("Rent and/or mortgage expense: $"))
+            # utilities = float(input("Utilities total expense: $"))
+            # food = float(input("Groceries & food expense: $"))
+            # transport = float(input("Transport expense: $"))
+            # insurance = float(input("Insurance payments: $"))
+            # debt = float(input("Any debt repayments: $"))
+            # misc = float(input("Any additional miscellaneous expenses: $"))
+            # total_expenses = (
+            #     housing + utilities + food + transport + insurance + debt + misc
+            # )
+            total_expenses = sum(expense_variables)
             break
         except ValueError:
             print("\nInvalid input...")

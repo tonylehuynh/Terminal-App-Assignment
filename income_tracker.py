@@ -26,6 +26,8 @@ def input_amount():
             amount_input = float(
                 input("Enter the amount: $")
             )
+            if amount_input < 0:
+                continue
             break
         except ValueError:
             print("\nInvalid input...")
@@ -43,7 +45,7 @@ def store_income_data():
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
 
-        category = "income"
+        category = "Income"
         date = input_date()
         amount = input_amount()
 

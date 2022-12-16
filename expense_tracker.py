@@ -2,7 +2,6 @@
 
 import os
 import csv
-import datetime
 from income_tracker import input_date, input_amount, file_does_not_exist
 
 
@@ -37,12 +36,14 @@ def expense_category():
     print("12. Socialising")
     print("13. Miscellaneous")
     while True:
+        # Try except block to ensure user can only input integers
         try:
             user_input = int(
                 input(
                     "\nEnter a number to choose your option (e.g. Type 1 for Rent):\n"
                 )
             )
+            # If statement to ensure user can only input 1-13
             if not (0 < user_input < 14):
                 print("\nInvalid input...")
                 print("Please only enter in number between 1 and 13...")
@@ -51,14 +52,14 @@ def expense_category():
             break
         except ValueError:
             print("\nInvalid input...")
-            print("Please try again and ensure you only enter number values\n")
+            print("Please try again and ensure you only enter whole number values\n")
     return expense_type
 
 
 def store_expense_data():
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
-        
+
         category = expense_category()
         print(f"Category: {category}")
         date = input_date()
@@ -74,5 +75,6 @@ def expense_tracker():
         file_does_not_exist()
     if os.path.exists("data.csv"):
         store_expense_data()
+
 
 expense_tracker()
