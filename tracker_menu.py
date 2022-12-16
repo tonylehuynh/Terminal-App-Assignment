@@ -1,4 +1,4 @@
-"""This is the feature for Option 2 'Track Budget' of this Terminal Application"""
+"""This is the menu displayed for Option 2 'Track Budget' of this Terminal Application"""
 
 import os
 
