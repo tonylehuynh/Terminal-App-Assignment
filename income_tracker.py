@@ -6,9 +6,9 @@ import csv
 import datetime
 
 
-def file_does_not_exist_expense():
+def file_does_not_exist_income():
     with open("income.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
         writer.writerow(['Date', 'Amount'])
 
-file_does_not_exist_expense()
+
