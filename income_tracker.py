@@ -11,7 +11,14 @@ def income_category():
 
 
 def input_date():
-    pass
+    while True:
+        try:
+            date_string = input("Enter a date (YYYY-MM-DD): ")
+            date_input = datetime.datetime.strptime(date_string, "%Y-%m-%d")
+            break
+        except ValueError:
+            print("Invalid date format... Please enter a date in the format YYYY-MM-DD.")
+    return date_input
 
 
 def input_amount():
@@ -28,7 +35,7 @@ def store_budget_data():
     with open("data.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
 
-        category = "income"
+        category = income_category()
         test_date = datetime.datetime(2022, 6, 6)
         date = test_date
         amount = 100.20
