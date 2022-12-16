@@ -11,7 +11,7 @@ from tracker_menu import tracker_menu
 def main_menu():
     os.system("cls")
     print("Welcome to your personal budget app!\n")
-    print("Please enter 1, 2 or 3 for the following options:\n")
+    print("Please enter 1, 2, 3 for the following options:\n")
     print("1. Estimate Budget projection")
     print("2. Track your budget")
     print("3. Exit application")
