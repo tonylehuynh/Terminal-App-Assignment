@@ -14,7 +14,7 @@ def display_last_rows():
         if row_count < 11:
             os.system("cls")
             print(
-                "\nNot enough entries. You need to record more income or expenses first."
+                "Not enough entries. You need to record more income or expenses first."
             )
         else:
             os.system("cls")

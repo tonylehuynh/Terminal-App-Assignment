@@ -34,15 +34,14 @@ def projected_income():
     while True:
         try:
             total_income = float(
-                input("Enter your projected monthly post-tax primary income: $")
+                (input("Enter your projected monthly post-tax primary income: $"))
             )
             if total_income < 0:
-                print("Invalid input... Only enter positive values.")
-                continue
+                raise ValueError("Error: Only enter a positive value.")
             break
         except ValueError:
             print("\nInvalid input...")
-            print("Please try again and ensure you only enter number values\n")
+            print("Please try again and ensure you only enter positive number values\n")
     return total_income
 
 
@@ -57,7 +56,7 @@ def budget_projection():
     print("This is simply a general estimate and projection of your budget.\n")
     income_total = projected_income()
     os.system("cls")
-    print("Great! Now please enter your projected monthly expenses:\n")
+    print("Great! Now please enter your estimated monthly expenses:\n")
     print("(Enter '0' for any expense that isn't applicable)")
     expense_total = projected_expenses()
     os.system("cls")
