@@ -11,10 +11,10 @@ Key features include:
 
 Below are some screenshots of the terminal Python app:
 
-![Screenshot 1](docs\app_screenshot1.jpg)
-![Screenshot 2](docs\app_screenshot2.jpg)
-![Screenshot 3](docs\app_screenshot3.jpg)
-![Screenshot 4](docs\app_screenshot4.jpg)
+![Screenshot 1](./docs/app_screenshot1.jpg)
+![Screenshot 2](./docs/app_screenshot2.jpg)
+![Screenshot 3](./docs/app_screenshot3.jpg)
+![Screenshot 4](./docs/app_screenshot4.jpg)
 
 ## Requirements
 - Python 3.11.1 or higher
@@ -70,7 +70,7 @@ Folder path here:
 ```
 Run the 'app.exe' file in this folder
 
-![exe file screenshot](docs\exefile.jpg)
+![exe file screenshot](./docs/exefile.jpg)
 
 ## Instructions
 
@@ -78,7 +78,7 @@ Once you have successfully run the python app, simply input the required input o
 
 You can see this in the screenshot below where the app will prompt you to enter in a date (YYYY-MM-DD) and income $ amount to record. 
 
-![Screenshot 5](docs\app_screenshot5.jpg)
+![Screenshot 5](./docs/app_screenshot5.jpg)
 
 **Please also note** that all recorded income and expenses that you provide are stored in a created 'data.csv' file. You can open this csv file separately to view it's contents. Please be mindful on security if any sensitive information is stored in this 'data.csv' file. 
 
@@ -119,7 +119,7 @@ Description of features:
 
 This feature allows the user to choose an option of what they wish to do when opening the app.
 
-![Screenshot 1](docs\app_screenshot1.jpg)
+![Screenshot 1](./docs/app_screenshot1.jpg)
 
 The screenshot above shows how the user can enter the options '1', '2' or '3' to choose.
 
@@ -127,7 +127,7 @@ The menu feature utilises while loops and try except blocks in order to handle a
 
 A second menu can also be shown in this screenshot:
 
-![Screenshot 6](docs\app_screenshot6.jpg)
+![Screenshot 6](./docs/app_screenshot6.jpg)
 
 ### __2. Budget projection__
 
@@ -137,7 +137,7 @@ User will input estimated monthly income and monthly expenses in order to do thi
 
 This would be used for users who wish to see a quick estimation on what their budget may look like for the year for planning purposes.
 
-![Screenshot 7](docs\app_screenshot7.jpg)
+![Screenshot 7](./docs/app_screenshot7.jpg)
 
 
 ### __3. Record income and expenses__
@@ -146,9 +146,9 @@ User will utilise this feature to track their actual income and expenses. These 
 
 Expenses will also be separated and recorded by category.
 
-![Screenshot 3](docs\app_screenshot3.jpg)
+![Screenshot 3](./docs/app_screenshot3.jpg)
 
-![Csv screenshot](docs\csv_screenshot.jpg)
+![Csv screenshot](./docs/csv_screenshot.jpg)
 
 ### __4. Generate pie chart__
 
@@ -156,7 +156,7 @@ This feature will read the stored entries recorded in the 'data.csv' file and th
 
 This pie chart will display a distribution of the user's income and expenses by category.
 
-![Screenshot 4](docs\app_screenshot4.jpg)
+![Screenshot 4](./docs/app_screenshot4.jpg)
 
 Python packages will be used to create the pie chart. 
 
@@ -164,7 +164,7 @@ Python packages will be used to create the pie chart.
 
 This feature will allow the user to quickly see their last 10 recorded income and expense entries from within the app, as opposed to having to open the 'data.csv' file separately themselves.
 
-![Screenshot 8](docs\app_screenshot8.jpg)
+![Screenshot 8](./docs/app_screenshot8.jpg)
 
 ## Implementation plan
 
@@ -178,11 +178,11 @@ Trello was also used to set deadlines for the completion of tasks.
 
 Screenshot below is the Trello board during the initial stage of the app:
 
-![Trelloboard](docs\Trello1.jpg)
+![Trelloboard](./docs/Trello1.jpg)
 
 Below is the Trello board in the middle of working on the app with some tasks completed:
 
-![Trelloboard](docs\Trello2.jpg)
+![Trelloboard](./docs/Trello2.jpg)
 
 In the Initial Project Discussion section of the Trello board, I wrote down all my ideas for the app. After consulting with the educators, I narrowed down my app idea as an MVP and initially had 3 main features which were the main menu, the estimated budget projection and recording income & expenses. 
 
@@ -202,13 +202,13 @@ I also included other tasks of the assignment outside of coding on the Trello Bo
 
 Here are some screenshots for the Trello cards containing the app features as well as checklist items to be completed. The screenshots outline how I intended on implementing each feature and the deadlines I gave myself:
 
-![Trello Card](docs\Card7.jpg)
-![Trello Card](docs\Card1.jpg)
-![Trello Card](docs\Card2.jpg)
-![Trello Card](docs\Card3.jpg)
-![Trello Card](docs\Card4.jpg)
-![Trello Card](docs\Card5.jpg)
-![Trello Card](docs\Card6.jpg)
+![Trello Card](./docs/Card7.jpg)
+![Trello Card](./docs/Card1.jpg)
+![Trello Card](./docs/Card2.jpg)
+![Trello Card](./docs/Card3.jpg)
+![Trello Card](./docs/Card4.jpg)
+![Trello Card](./docs/Card5.jpg)
+![Trello Card](./docs/Card6.jpg)
 
 
 ## TESTING
@@ -235,7 +235,7 @@ The try except blocks used in the functions were also tested to ensure that they
 
 See this in screenshot below:
 
-![First manual test](docs\Test1.jpg)
+![First manual test](./docs/Test1.jpg)
 
 __Test 2 - Record Income & Expense__
 
@@ -256,7 +256,7 @@ Lastly, tests were done to ensure that the user inputs were appended and recorde
 
 See screenshot below:
 
-![Second manual test](docs\Test2.jpg)
+![Second manual test](./docs/Test2.jpg)
 
 Overall, the manual testing of the two main features of "Menus" and "Recording Income/Expense to csv file" were very relevant in ensuring that these features were working as intended for this application. Each test case was also to ensure that the application didn't break due to invalid user input. 
 
