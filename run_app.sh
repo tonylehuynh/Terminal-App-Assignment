@@ -25,13 +25,5 @@ virtualenv venv
 
 pip install pandas>=1.5.2 matplotlib>=3.6.2 pytest>=7.2.0
 
-# Check if user has git installed
-if ! command -v git &> /dev/null; then
-  echo "Error: Git is not installed. Please install Git before running this script." >&2
-  exit 1
-fi
-
-git clone https://github.com/tonylehuynh/Terminal-App-Assignment.git
-
 python app.py
 
