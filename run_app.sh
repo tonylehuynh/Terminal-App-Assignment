@@ -35,11 +35,3 @@ git clone https://github.com/tonylehuynh/Terminal-App-Assignment.git
 
 python app.py
 
-
-# Check if python is installed and RIGHT VERSION
-
-# Install virtual environemnts
-
-# Clone the github repo
-
-# Install requirments. Then run python app

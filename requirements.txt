@@ -1,15 +1,7 @@
-pytest==7.2.0
-pandas==1.5.2
-matplotlib==3.6.2
-black
-pyinstaller
-
-
-
-
-
+pytest>=7.2.0
+pandas>=1.5.2
+matplotlib>=3.6.2
 csv
-datetime
+DateTime>=4.7
 os
-
 
