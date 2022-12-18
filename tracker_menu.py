@@ -9,18 +9,32 @@ from display_last_rows import display_last_rows
 
 
 def check_for_file():
+    """
+    This function checks if data.csv file exists in the app directory.
+
+    If data.csv does not exist, it will call the file_does_not_exist() function
+    """
     os.system("cls")
     if not os.path.exists("data.csv"):
         file_does_not_exist()
 
 
 def file_does_not_exist():
+    """
+    This function will create a data.csv file with the headings:
+    Date, Category, Amount
+    """
     with open("data.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
         writer.writerow(["Date", "Category", "Amount"])
 
 
 def tracker_menu():
+    """
+    This function contains the second menu of the budget app.
+
+    User can input a number to choose their desired option.
+    """
     os.system("cls")
     print("~ It's time to track your income and expenses ~\n")
     print("Please enter 1, 2, 3, 4, 5 or 6 for the following options:\n")

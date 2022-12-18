@@ -76,7 +76,7 @@
  [],
  False,
  False,
- 1671253944,
+ 1671338148,
  [('run.exe',
    'C:\\Users\\0888562\\Documents\\CODER\\TERMINAL ASSIGNMENT '
    'T1A3\\src\\venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

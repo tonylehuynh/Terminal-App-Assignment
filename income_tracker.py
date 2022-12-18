@@ -1,5 +1,4 @@
-"""Feature to allow user to track their income"""
-
+"""Feature allows user to track and record their income"""
 
 import os
 import csv
@@ -7,6 +6,12 @@ import datetime
 
 
 def input_date():
+    """
+    This function receives user input for a date for their income/expense
+    entry.
+
+    User input is converted from string and returns a 'datetime.date obeject.
+    """
     while True:
         try:
             date_string = input(
@@ -26,6 +31,9 @@ def input_date():
 
 
 def input_amount():
+    """
+    This function receives user input for income/expense amount and returns a float. 
+    """
     while True:
         try:
             amount_input = float(input("Enter the amount: $"))
@@ -39,6 +47,9 @@ def input_amount():
 
 
 def store_income_data():
+    """
+    This function appends user income data to the data.csv file.
+    """
     os.system("cls")
     print("Please enter your income received:\n")
     with open("data.csv", "a", newline="") as csvfile:

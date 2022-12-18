@@ -1,26 +1,37 @@
 """Testing of the budget projection feature of the app"""
 
 import pytest
-from budget_projection import monthly_budget_calculation, projected_expenses, projected_income
+from budget_projection import (
+    monthly_budget_calculation,
+    projected_expenses,
+    projected_income,
+)
 
 
-# # Test that projected_expenses function will output as an error if user input is not a float or integer
 def test_projected_expenses_output_error(monkeypatch):
-    """Should return as a ValueError if user inputs text"""
+    """
+    Test that the projeted expenses function flags invalid user input.
+
+    This test verifies that a ValueError is raised if user input is not a
+    float or integer.
+    """
 
     def mock_user_input(prompt):
         return "Test Invalid Input"
 
     monkeypatch.setattr("builtins.input", mock_user_input)
+    # Test run successfully and function was updated to handle invalid input.
     with pytest.raises(ValueError):
         projected_expenses()
-    # Test was run successfully and function was further updated to handle invalid inputs
-    # This test should not be run again due to the while loop in place to handle invalid inputs. 
 
 
-# Test to make sure projected_expenses function output returns as a float
 def test_projected_expenses_output_type(monkeypatch):
-    "Output of the projected expenses function should result in a float data type"
+    """
+    Test that projected expenses functions correct data type.
+
+    This test makes a mock user input and verifies that the function
+    should return a float data type.
+    """
 
     def mock_user_input(prompt):
         return 232
@@ -29,9 +40,14 @@ def test_projected_expenses_output_type(monkeypatch):
     result = projected_expenses()
     assert isinstance(result, float)
 
-# Test to make sure projected_income function output returns as a float
+
 def test_projected_income_output_type(monkeypatch):
-    "Output of the projected income function should result in a float data type"
+    """
+    Test that projected income functions correct data type.
+
+    This test makes a mock user input and verifies that the function
+    should return a float data type.
+    """
 
     def mock_user_input(prompt):
         return 100
@@ -41,12 +57,22 @@ def test_projected_income_output_type(monkeypatch):
     assert isinstance(result, float)
 
 
-# Below two test cases are testing that the total monthly budget calculation is correct
+# Below two test cases for if total monthly budget calculation is correct
 def test_monthly_budget_calculation_positive():
-    """Income of $100 minus expenses of $20 should result in $80 leftover"""
+    """
+    Test that the budget calculation function returns the correct result.
+
+    This test verifies that the calculation of estimated budget is correct
+    when given input of $100 income and $20 expense.
+    """
     assert monthly_budget_calculation(100, 20) == 80
 
 
 def test_monthly_budget_calculation_negative():
-    """Expenses being higher than income should return a negative value"""
+    """
+    Test that the budget calculation function returns the correct negative result.
+
+    This test verifies that the calculation of estimated budget is correct
+    when given input of $20 income and $100 expense.
+    """
     assert monthly_budget_calculation(20, 100) == -80

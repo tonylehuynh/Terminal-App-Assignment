@@ -7,8 +7,12 @@ from budget_projection import budget_projection
 from tracker_menu import tracker_menu
 
 
-# App main menu
 def main_menu():
+    """
+    This function contains the main menu for this budget app.
+
+    User can input a number to choose option they wish to proceed with.
+    """
     os.system("cls")
     print("Welcome to your personal budget app!\n")
     print("Please enter 1, 2, 3 for the following options:\n")

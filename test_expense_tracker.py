@@ -3,9 +3,13 @@
 from expense_tracker import expense_category
 
 
-# Test to ensure function returns the correct dict string values based on integer input
 def test_expense_category():
-    # Two edge cases of 0 and 14 included
+    """
+    Test that the correct dict values are returned based on user input.
+
+    This test verifies that the correct expense categories are returned
+    based on user input as an integer. 
+    """
     test_cases = [
         (1, 'Rent'), 
         (2, 'Mortgage'), 
@@ -20,10 +24,9 @@ def test_expense_category():
         (11, 'Exercise'),
         (12, 'Socialising'),
         (13, 'Miscellaneous'),
-        (0, None), 
+        (0, None),  # Two invalid edge cases of 0 and 14 included
         (14, None)
     ]
-
     for x in test_cases:
         output = expense_category()
         assert output == x[1]

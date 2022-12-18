@@ -1,9 +1,12 @@
-"""This is the feature for Option 1 'Budget Projection' of the application."""
+"""This is the feature for Option 1 'Budget Projection'. User can receive their estimated budget"""
 
 import os
 
 
 def projected_expenses():
+    """This function receives user input for expense amount and returns sum
+    of expenses.
+    """
     while True:
         try:
             expense_types = [
@@ -31,6 +34,10 @@ def projected_expenses():
 
 
 def projected_income():
+    """
+    This function receives and returns user input for their total estimated
+    income.
+    """
     while True:
         try:
             total_income = float(
@@ -50,6 +57,10 @@ def monthly_budget_calculation(income, expense):
 
 
 def budget_projection():
+    """
+    This function calculates user's income minus expense, and returns left
+    over budget amount for a month and a year's time period.
+    """
     os.system("cls")
     print("We will now project your budget for the next month & year!\n")
     print("Don't worry about being exact with the numbers.")

@@ -1,4 +1,4 @@
-"""Feature to allow user to track their expenses"""
+"""This feature allows user to track and record their expenses"""
 
 import os
 import csv
@@ -6,6 +6,11 @@ from income_tracker import input_date, input_amount
 
 
 def expense_category():
+    """
+    This function displays a menu of expense categories for user to choose.
+
+    Function will return an expense category based on user input.
+    """
     category = {
         1: "Rent",
         2: "Mortgage",
@@ -36,14 +41,12 @@ def expense_category():
     print("12. Socialising")
     print("13. Miscellaneous")
     while True:
-        # Try except block to ensure user can only input integers
         try:
             user_input = int(
                 input(
                     "\nEnter a number to choose your option (e.g. Type 1 for Rent):\n"
                 )
             )
-            # If statement to ensure user can only input 1-13
             if not (0 < user_input < 14):
                 print("\nInvalid input...")
                 print("Please only enter in number between 1 and 13...")
@@ -57,6 +60,9 @@ def expense_category():
 
 
 def store_expense_data():
+    """
+    This function appends user expense data to the data.csv file.
+    """
     os.system("cls")
     print("Please enter your expenses\n")
     with open("data.csv", "a", newline="") as csvfile:
